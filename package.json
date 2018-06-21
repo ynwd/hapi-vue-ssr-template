@@ -1,0 +1,51 @@
+{
+  "name": "hapi-vue-ssr-template",
+  "version": "1.0.0",
+  "description": "hapi vue ssr template",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon start",
+    "start": "NODE_ENV=production node start",
+    "build": "rimraf static/public && npm run build:client && npm run build:server",
+    "build:client": "NODE_ENV=production webpack --config src/modules/web/config/webpack.client.config.js --progress --hide-modules",
+    "build:server": "NODE_ENV=production webpack --config src/modules/web/config/webpack.server.config.js --progress --hide-modules"
+  },
+  "author": "ynwd",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^2.0.1",
+    "deep-extend": "^0.6.0",
+    "es6-promise": "^4.2.4",
+    "glue": "^5.0.0",
+    "hapi": "^17.4.0",
+    "hapi-auth-basic": "^5.0.0",
+    "inert": "^5.1.0",
+    "vue": "^2.5.16",
+    "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "eslint-plugin-vue": "^4.5.0",
+    "nodemon": "^1.17.5",
+    "rimraf": "^2.6.2",
+    "vue-loader": "^15.1.0",
+    "vue-server-renderer": "^2.5.16",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^3.12.0",
+    "webpack-dev-middleware": "^2.0.5",
+    "webpack-hot-middleware": "^2.22.2",
+    "webpack-merge": "^4.1.2",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
